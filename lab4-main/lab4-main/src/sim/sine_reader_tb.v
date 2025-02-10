@@ -24,7 +24,16 @@ module sine_reader_tb();
 
     // Tests
     initial begin
-
+        step_size = {10'd337, 10'd942};
+        repeat(1000) begin
+        #10 generate_next =1'b1;
+        #10 generate_next = 1'b0;
+        end
+        #30
+        #20
+        #20;
     end
+endmodule
+
 
 endmodule
