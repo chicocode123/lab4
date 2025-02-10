@@ -41,7 +41,14 @@ module note_player_tb();
 
     // Tests
     initial begin
-
+        play_enable = 1'b1;
+        generate_next_sample = 1'b1; 
+        load_new_note =1'b1;
+        #10 generate_next_sample = 1'b0;
+        #10 note_to_load = 5'd48;
+        duration_to_load = 5'd48;
+        #10;
+        #3000;
     end
 
 endmodule
