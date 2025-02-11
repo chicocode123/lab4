@@ -1297,7 +1297,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a30cc532</spirit:value>
+            <spirit:value>9:71d983b4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2502,15 +2502,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW1</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW1" spirit:order="247">clk_out1___100.000______0.000______50.0______205.508____233.292</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW1" spirit:order="247">clk_out1__100.00000______0.000______50.0______205.508____233.292</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW2</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW2" spirit:order="248">clk_out2____30.000______0.000______50.0______253.016____233.292</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW2" spirit:order="248">clk_out2__30.00000______0.000______50.0______253.016____233.292</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW3</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW3" spirit:order="249">clk_out3___150.000______0.000______50.0______193.443____233.292</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OUTCLK_SUM_ROW3" spirit:order="249">clk_out3__150.00000______0.000______50.0______193.443____233.292</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_OUTCLK_SUM_ROW4</spirit:name>
@@ -2614,15 +2614,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT1_OUT_FREQ</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT1_OUT_FREQ" spirit:order="275">100.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT1_OUT_FREQ" spirit:order="275">100.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT2_OUT_FREQ</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_OUT_FREQ" spirit:order="276">30.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_OUT_FREQ" spirit:order="276">30.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT3_OUT_FREQ</spirit:name>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT3_OUT_FREQ" spirit:order="277">150.000</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT3_OUT_FREQ" spirit:order="277">150.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT4_OUT_FREQ</spirit:name>
@@ -3416,15 +3416,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT0_ACTUAL_FREQ</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT0_ACTUAL_FREQ" spirit:order="711">100.000</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT0_ACTUAL_FREQ" spirit:order="711">100.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT1_ACTUAL_FREQ</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT1_ACTUAL_FREQ" spirit:order="712">30.000</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT1_ACTUAL_FREQ" spirit:order="712">30.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT2_ACTUAL_FREQ</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_ACTUAL_FREQ" spirit:order="713">150.000</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT2_ACTUAL_FREQ" spirit:order="713">150.00000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT3_ACTUAL_FREQ</spirit:name>
@@ -3441,6 +3441,38 @@
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_CLKOUT6_ACTUAL_FREQ</spirit:name>
         <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLKOUT6_ACTUAL_FREQ" spirit:order="717">100.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_M_MAX</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_MAX" spirit:order="403">64.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_M_MIN</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_MIN" spirit:order="403">2.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_D_MAX</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_D_MAX" spirit:order="403">80.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_D_MIN</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_D_MIN" spirit:order="403">1.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_O_MAX</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_O_MAX" spirit:order="403">128.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_O_MIN</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_O_MIN" spirit:order="403">1.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_VCO_MIN</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_VCO_MIN" spirit:order="403">600.000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="REAL">
+        <spirit:name>C_VCO_MAX</spirit:name>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_VCO_MAX" spirit:order="403">1200.000</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -3585,12 +3617,12 @@
     <spirit:parameter>
       <spirit:name>USER_CLK_FREQ0</spirit:name>
       <spirit:displayName>User Frequency(MHz)</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_CLK_FREQ0" spirit:order="15200">100.0</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_CLK_FREQ0" spirit:order="15200" spirit:minimum="1" spirit:maximum="300">100.0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_CLK_FREQ1</spirit:name>
       <spirit:displayName>User Frequency(MHz)</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_CLK_FREQ1" spirit:order="15200">100.0</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_CLK_FREQ1" spirit:order="15200" spirit:minimum="1" spirit:maximum="300">100.0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_CLK_FREQ2</spirit:name>
@@ -4639,7 +4671,7 @@
       <xilinx:xpmLibraries>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreRevision>4</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.ADDR_WIDTH" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.ARUSER_WIDTH" xilinx:valueSource="constant"/>
@@ -4682,12 +4714,12 @@
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2019.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="efefe28e"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8cdd5700"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="7591bddb"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="4f3d3737"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="fcf089ff"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="6585dced"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="7cef30f8"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="00954ddc"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
