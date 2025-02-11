@@ -16,7 +16,7 @@ module note_player(
     reg[5:0] time_next;
     wire[5:0] cur_time;
     
-    dffre #(5) note_player_dff(
+    dffre #(6) note_player_dff(
         .clk (clk),
         .r (reset), .en(beat),
         .d (time_next), .q (cur_time)
@@ -25,7 +25,7 @@ module note_player(
     reg timer_done = 1'b0;
     
     always @(*) begin
-        if (reset || load_new_note ||generate_next_sample) begin
+        if (reset || (load_new_note && timer_done) || generate_next_sample) begin
             time_next = duration_to_load;
             timer_done = 1'b0;
         end else if (play_enable) begin
@@ -44,15 +44,16 @@ module note_player(
                         .clk(clk),
                         .addr(note_to_load),
                         .dout(rom_to_sine_reader));
-    
+
     sine_reader note_player_insta(
                     .clk(clk),
                     .reset(reset),
                     .step_size(rom_to_sine_reader),
-                    .generate_next(generate_next),
+                    .generate_next(generate_next_sample),
                     .sample_ready(new_sample_ready),
                     .sample(sample_out));
     
+    assign done_with_note = timer_done;
     
-
+  
 endmodule
