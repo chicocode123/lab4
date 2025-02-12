@@ -2,6 +2,7 @@
 `define PLAYING   2'b01
 `define NOTE_DONE 2'b10
 
+
 module song_reader(
     input clk,
     input reset,
@@ -15,6 +16,7 @@ module song_reader(
 );
     wire [11:0] dout;
     reg [6:0] start;
+    wire [1:0] curr_song;
     
     // for ffs
     wire [1:0] curr_state;
@@ -35,6 +37,7 @@ module song_reader(
     wire [5:0] curr_duration;
     reg  [5:0] next_duration;
     
+    // 
     song_rom rom_insta (
         .clk(clk),
         .addr(addr),
@@ -65,6 +68,13 @@ module song_reader(
         if (reset) begin
             next_state     = `PAUSED;
             next_addr      = start; 
+            next_song_done = 0;
+            next_note      = 6'b000000;
+            next_duration  = 6'b000000;
+            next_new_note  = 0;
+        end else if (song != curr_song) begin
+            next_state     = `PAUSED;
+            next_addr      = start;  // start is computed based on the new 'song'
             next_song_done = 0;
             next_note      = 6'b000000;
             next_duration  = 6'b000000;
@@ -119,6 +129,13 @@ module song_reader(
     end
     
     //Flip-flops
+    dffr #(2) song_reg ( //ff1
+        .clk(clk),
+        .r(reset),
+        .d(song),
+        .q(curr_song)
+    );
+    
     dffr #(2) state_reg ( //ff1
         .clk(clk),
         .r(reset),
