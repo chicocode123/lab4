@@ -17,29 +17,37 @@ module sine_reader(
         .d (next_address), .q (current_address)
         );
     
+    //Increment to next sample when generate enabled 
     always @(*) begin
         if (reset) begin
             next_address = 22'd0;
+        end else if (current_address >= (10'd1023 - step_size)) begin
+            next_address = step_size;
         end else if(generate_next) begin
             next_address = current_address + step_size;
         end else begin
             next_address = current_address;
         end
     end
+   
     wire[9:0] flip_to_rom;
     wire[15:0] rom_to_out;
     
-    assign flip_to_rom = current_address[20] ? ~current_address[19:10]
-                                                : current_address[19:10];
-    
+    assign flip_to_rom = (current_address[20] == 1'b1) ? (10'd1023  - current_address[19:10])
+                                      : current_address[19:10];
+                  
+    //Once we've determined quadrant and location on 1/4th wave then produce actual sample of wave
     sine_rom sine_rom1(.clk(clk),
               .addr(flip_to_rom),
               .dout(rom_to_out));
               
-    assign sample = current_address[21] ? - rom_to_out : rom_to_out;
+    assign sample = (current_address[21] == 1'b1) ? (0 - rom_to_out) : rom_to_out;
+
+    
     
     wire next_ready;
-    wire current_ready;
+   
+   // wire current_ready;
     
     dffr #(1) sine_dff2(
         .clk (clk),
