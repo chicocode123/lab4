@@ -7,13 +7,15 @@ module mcu(
     input reset,
     input play_button,
     input next_button,
-    output reg play,
-    output reg reset_player,
-    output reg [1:0] song,
+    output play,
+    output reset_player,
+    output [1:0] song,
     input song_done
 );
-
-    wire [1:0 ]current_state;
+    reg play_temp;
+    reg reset_player_temp;
+    reg [1:0] song_temp;
+    wire [1:0] current_state;
     reg [1:0] next_state;    
     
     dffr #(2) state_reg (
@@ -22,39 +24,29 @@ module mcu(
         .d(next_state),
         .q(current_state)
     );
-    always @(*) begin
-        if (reset) begin
-            song = 2'b00;
-        end
-    end
-    always @(*) begin
-        reset_player = (next_button || song_done);
 
-        if (play_button) begin
+    always @(*) begin
+        reset_player_temp = (next_button || song_done);
+
+        if (reset) begin
+            song_temp = 2'b00;
+        end else if (play_button) begin
             next_state = (current_state == `PAUSE || `NEXT) ? `PLAY : `PAUSE;
         end else if (next_button || song_done) begin
             next_state = `NEXT;
+        end else if (current_state == `PLAY) begin
+            play_temp = 1;
+        end else if (current_state == `PAUSE) begin
+            play_temp = 0;
+        end else if (current_state == `NEXT) begin
+            song_temp = song_temp + 1;
+            play_temp = 0;
         end else begin
             next_state = current_state;
         end
     end
-    
-    always @(*) begin
-        case (current_state)
-            `PLAY : begin
-                play = 1;
-            end
-            `PAUSE : begin
-                play = 0;
-            end
-            `NEXT : begin
-                song = song + 1;
-                play = 0;
-                next_state = `PAUSE;
-            end
-            default : begin
-                play = 0;
-            end
-        endcase
-    end
+        
+    assign play = play_temp;
+    assign reset_player = reset_player_temp;
+    assign song = song_temp;
 endmodule
