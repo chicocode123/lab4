@@ -23,7 +23,7 @@ module note_player(
         .d (time_next), .q (cur_time)
         );
     
-    assign done_with_note = cur_time == 6'd0 ? 1'b0: 1'b1;
+    assign done_with_note = cur_time == 6'd0 ? 1'b1: 1'b0;
     
     always @(*) begin
         if (reset || (load_new_note)) begin
