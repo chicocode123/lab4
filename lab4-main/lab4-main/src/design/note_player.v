@@ -42,12 +42,15 @@ module note_player(
     
     wire[19:0] rom_to_sine_reader;
     
+    wire[5:0] player_to_rom;
+    
+    assign player_to_rom = (load_new_note)? note_to_load : 6'd0;
     
     frequency_rom note_player_insta1(
                         .clk(clk),
-                        .addr(note_to_load),
+                        .addr(player_to_rom),
                         .dout(rom_to_sine_reader));
-
+    wire[15:0] sine_reader_to_out;
     
     
     sine_reader note_player_insta(
@@ -56,12 +59,13 @@ module note_player(
                     .step_size(rom_to_sine_reader),
                     .generate_next(generate_next_sample),
                     .sample_ready(new_sample_ready),
-                    .sample(sample_out));
+                    .sample(sine_reader_to_out));
     
-    assign sample_out = play_enable? sample_out: 16'd0;
+    assign sample_out = play_enable? sine_reader_to_out: 16'd0;
     
    
     
   
 endmodule
-    
+
+
