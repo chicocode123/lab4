@@ -29,9 +29,31 @@ module song_reader_tb();
 
     // Tests
     initial begin
-
+    song = 01;
+    play = 1;
+    note_done = 0;
+    #40 note_done = 1;
+    #10 note_done = 0;
+    #15
+    repeat (32) begin
+    $display("Addr %d %d", note, duration); // note, duration 0-31
+    #30 note_done = 1;
+    #10 note_done = 0;
     end
-
+    #50
+    $display("Song Done: %d", song_done);
+    $display("---Next Song---");
+    song = 2'b10;
+    repeat (33) begin
+    $display("Addr %d %d", note, duration); // note, duration 1-32
+    #30 note_done = 1;
+    #10 note_done = 0;
+    end
+    play = 0;
+    end
 endmodule
+
+
+
 
 
