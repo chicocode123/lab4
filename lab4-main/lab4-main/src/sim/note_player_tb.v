@@ -23,7 +23,7 @@ module note_player_tb();
         .new_sample_ready(new_sample_ready)
     );
 
-    beat_generator #(.WIDTH(17), .STOP(1500)) beat_generator(
+    beat_generator #(.WIDTH(17), .STOP(3)) beat_generator_dut(
         .clk(clk),
         .reset(reset),
         .en(1'b1),
@@ -44,11 +44,24 @@ module note_player_tb();
         play_enable = 1'b1;
         generate_next_sample = 1'b1; 
         load_new_note =1'b1;
-        #10 generate_next_sample = 1'b0;
-        #10 note_to_load = 5'd48;
-        duration_to_load = 5'd48;
-        #10;
-        #3000;
+        
+        note_to_load = 6'd38;
+        duration_to_load = 5'd12;
+        
+        #10 load_new_note = 1'b0;;
+        #300;
+        load_new_note =1'b1;
+        
+        note_to_load = 6'd56;
+        duration_to_load = 5'd12;
+        
+        #10 load_new_note = 1'b0;
+//        load_new_note =1'b1;
+        
+//        #10 note_to_load = 6'd110;
+//        duration_to_load = 5'd12;
+       
     end
 
 endmodule
+
