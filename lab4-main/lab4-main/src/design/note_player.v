@@ -23,19 +23,16 @@ module note_player(
         .d (time_next), .q (cur_time)
         );
     
-    assign done_with_note = cur_time == 6'd0 ? 1'b1: 1'b0;
+    assign done_with_note = ((cur_time == 6'd0) && (beat)) ? 1'b1: 1'b0;
     
     always @(*) begin
-        if (reset || (load_new_note)) begin
+        if (reset || done_with_note) begin
             time_next = duration_to_load;
-            
+        end else if (load_new_note) begin
+            time_next = duration_to_load;         
         end else if (play_enable && beat) begin
-            
             time_next = cur_time -1;
-        end else if(cur_time == 0) begin
-            
-            time_next = cur_time;
-        end else begin
+        end else begin   
             time_next = cur_time;
         end
     end
@@ -44,15 +41,35 @@ module note_player(
     
     wire[5:0] player_to_rom;
     
-    assign player_to_rom = note_to_load;
+    
+   
+    reg [5:0] next_note;
+    wire [5:0] cur_note;
+    
+    dffr #(6) note_dff(
+        .clk (clk),
+        .r (reset),
+        .d (next_note), .q (cur_note)
+        );
+    
+    always@(*) begin
+        if (reset || load_new_note) begin
+            next_note = note_to_load;
+        end else begin
+            next_note = cur_note;
+        end
+    end
+    
+    
     
     frequency_rom note_player_insta1(
                         .clk(clk),
-                        .addr(player_to_rom),
+                        .addr(cur_note),
                         .dout(rom_to_sine_reader));
    
     wire[15:0] sine_reader_to_out;
     
+    wire sample_sine_reader =1'b0;
     
     sine_reader note_player_insta(
                     .clk(clk),
@@ -62,10 +79,14 @@ module note_player(
                     .sample_ready(new_sample_ready),
                     .sample(sine_reader_to_out));
     
-    assign sample_out = play_enable ? sine_reader_to_out: 16'd0;
+ 
+    
+   assign sample_out = play_enable ? sine_reader_to_out: 16'd0;
     
    
     
   
 endmodule
     
+
+
