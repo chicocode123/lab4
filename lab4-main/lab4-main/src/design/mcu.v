@@ -17,47 +17,50 @@ module mcu(
     wire [1:0] current_state;
     reg [1:0] next_state;    
     
-    dffr #(2) state_reg (
+    reg playing;
+    wire play_cur;
+    
+    assign reset_player = (next_button || song_done || reset) ? 1'b1 : 1'b0;
+ 
+    dffr #(2) song_reg (
         .clk(clk),
         .r(reset),
-        .d(next_state),
-        .q(current_state)
+        .d(song_temp),
+        .q(song)
     );
+   
     always @(*) begin
         if (reset) begin
             song_temp = 2'b00;
-        end
-    end
-    always @(*) begin
-        reset_player_temp = (next_button || song_done);
-
-        if (play_button) begin
-            next_state = (current_state == `PAUSE || `NEXT) ? `PLAY : `PAUSE;
         end else if (next_button || song_done) begin
-            next_state = `NEXT;
+            song_temp = song +1;
         end else begin
-            next_state = current_state;
+            song_temp = song;
         end
     end
     
+    dffr #(1) play_reg (
+        .clk(clk),
+        .r(reset),
+        .d(playing),
+        .q(play)
+    );
+  
     always @(*) begin
-        case (current_state)
-            `PLAY : begin
-                play_temp = 1;
-            end
-            `PAUSE : begin
-                play_temp = 0;
-            end
-            `NEXT : begin
-                song_temp = song_temp + 1;
-                play_temp = 0;
-            end
-            default : begin
-                play_temp = 0;
-            end
-        endcase
+        if (reset) begin
+            playing = 1'b0;
+        end else if (play_button) begin
+            playing = play + 1;
+        end else if (next_button || song_done) begin
+            playing = 1'b0;
+        end else begin
+            playing = play;
+        end
     end
-    assign play = play_temp;
-    assign song = song_temp;
-    assign reset_player = reset_player_temp;
+  
+   
+    
+    
+    
+   
 endmodule
