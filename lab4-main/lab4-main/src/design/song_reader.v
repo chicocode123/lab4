@@ -67,7 +67,7 @@ module song_reader(
         
         if (reset) begin
             next_state     = `PAUSED;
-            next_addr      = start; 
+            next_addr      = 2'b00; 
             next_song_done = 0;
             next_note      = 6'b000000;
             next_duration  = 6'b000000;
