@@ -109,38 +109,48 @@ module song_rom (
     assign memory[  92  ] = {6'd0, 6'd28}   ;   // Note: rest
     assign memory[  93  ] = {6'd46, 6'd6}   ;   // Note: 4F#Gb
     assign memory[  94  ] = {6'd47, 6'd16}  ;   // Note: 4G
-    assign memory[  95  ] = {6'd0, 6'd26}   ;   // Note: rest
-    assign memory[  96  ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  97  ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  98  ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  99  ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  100 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  101 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  102 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  103 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  104 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  105 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  106 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  107 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  108 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  109 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  110 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  111 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  112 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  113 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  114 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  115 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  116 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  117 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  118 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  119 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  120 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  121 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  122 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  123 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  124 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  125 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  126 ] = {6'd0, 6'd0}    ;   // Note: rest
-    assign memory[  127 ] = {6'd0, 6'd0}    ;   // Note: rest
+    assign memory[  95  ] = {6'd0, 6'd0}   ;   // Note: rest
+    
+    //Song "I need your love" by Calvin Harris
+    
+    //Intro
+    assign memory[  96  ] = {6'd47, 6'd15}   ;   // Note: 4G 
+    assign memory[  97  ] = {6'd43, 6'd15}    ;   // Note: 4Eb 
+    assign memory[  98  ] = {6'd40, 6'd25}    ;   // Note: 4C (Long)
+    
+    assign memory[  99 ] = {6'd0, 6'd5};   // Note: rest
+    assign memory[  100  ] = {6'd40, 6'd15}    ;   // Note: 4C (40) 
+    assign memory[  101  ] = {6'd47, 6'd15}   ;   // Note: 4G 
+    assign memory[  102  ] = {6'd43, 6'd15}    ;   // Note: 4Eb
+    assign memory[  103  ] = {6'd40, 6'd25}    ;   // Note: 4C (Long)
+    
+    
+    assign memory[  104  ] = {6'd47, 6'd15}    ;   // Note: 4G
+    assign memory[  105 ] = {6'd43, 6'd15}    ;   // Note: 4Eb
+    assign memory[  106 ] = {6'd38, 6'd25}    ;   // Note: 4Bb long
+    
+    assign memory[  107 ] = {6'd0, 6'd5};   // Note: rest
+    assign memory[  108 ] = {6'd38, 6'd15}    ;   // Note: 4Bb
+    assign memory[  109 ] = {6'd47, 6'd15}    ;   // Note: 4G
+    assign memory[  110 ] = {6'd43, 6'd15}    ;   // Note: 4Eb
+    assign memory[  111 ] = {6'd45, 6'd25}    ;   // Note: 4F
+    
+    //Fast Part
+    assign memory[  112 ] = {6'd43, 6'd15}    ;   // Note: 4Eb
+    assign memory[  113 ] = {6'd40, 6'd10}    ;   // Note: 4C
+    assign memory[  114  ] = {6'd0, 6'd5};   // Note: rest
+    assign memory[  115 ] = {6'd40, 6'd10}    ;   // Note: 4C
+    assign memory[  116 ] = {6'd47, 6'd15}    ;   // Note: 4G 
+    assign memory[  117 ] = {6'd43, 6'd15}    ;   // Note: 4Eb
+    assign memory[  118 ] = {6'd45, 6'd15}    ;   // Note: 4F
+    assign memory[  119 ] = {6'd40, 6'd15}    ;   // Note: 4C
+    assign memory[  120 ] = {6'd43, 6'd15}    ;   // Note: 4Eb
+    assign memory[  121 ] = {6'd40, 6'd10}    ;   // Note: 4C
+    assign memory[  122  ] = {6'd0, 6'd5};   // Note: rest
+    assign memory[  123 ] = {6'd40, 6'd10}    ;   // Note: 4C
+    assign memory[  124 ] = {6'd47, 6'd15}    ;   // Note: 4G
+    assign memory[  125 ] = {6'd43, 6'd15}    ;   // Note: 4Eb
+    assign memory[  126 ] = {6'd045, 6'd15}    ;   // Note: 4F
+    assign memory[  127 ] = {6'd40, 6'd20}    ;   // Note: 4C (longer)
 
 endmodule                           
